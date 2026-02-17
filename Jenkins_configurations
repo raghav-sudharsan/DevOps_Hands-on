@@ -1,0 +1,16 @@
+Jenkins installation and configurations
+=========================================
+yum install -y java-17*
+find /usr/lib/jvm/java-17* | head -n 3
+vi ~/.bash_profile
+  #Java_Home=/usr/lib/jvm/java-17-amazon-corretto.x86_64
+  #PATH=$PATH:$HOME/bin:$JAVA_HOME
+source ~/.bash_profile
+sudo yum install -y git 
+
+  # jenkins repository need to add in linux
+yum install jenkins 
+systemctl start jenkins 
+systemctl status jenkins 
+  #configure jenkins with default password under - /var/lib/jenkins/secrets/initialAdminPassword
+
