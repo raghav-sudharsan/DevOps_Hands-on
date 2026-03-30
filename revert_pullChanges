@@ -1,0 +1,16 @@
+# Define the source directory you copied from (adjust path if necessary)
+SOURCE_DIR="../../TechAspirants"
+
+# Iterate through all items in the source directory
+for src_item in "$SOURCE_DIR"/*; do
+    # Extract just the file or directory name
+    target_item=$(basename "$src_item")
+
+    # If the item exists in our current directory, flag it for removal
+    if [ -e "$target_item" ]; then
+        echo "[DRY RUN] Would remove: $target_item"
+        
+        # UNCOMMENT THE LINE BELOW (Remove the #) TO EXECUTE DELETION
+        # rm -rf "$target_item"
+    fi
+done
